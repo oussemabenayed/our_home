@@ -1,0 +1,12 @@
+{
+  "name": "buildestate-dev-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev-server": "node dev-server.js",
+    "mobile": "node dev-server.js",
+    "setup": "cd backend && npm install && cd ../frontend && npm install && cd ../admin && npm install",
+    "dev": "node dev-server.js"
+  },
+  "description": "BuildEstate Development Server Command Center"
+}

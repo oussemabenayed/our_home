@@ -1,0 +1,67 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+    "properties": "العقارات",
+    "about": "معلومات عنا",
+    "contact": "اتصل بنا",
+    "login": "تسجيل الدخول",
+    "signup": "اشتراك"
+  },
+  "hero": {
+    "title_part1": "ابحث عن الكمال الخاص بك",
+    "title_part2": "مساحة المعيشة",
+    "subtitle": "اكتشف منزل أحلامك في المواقع الأكثر رواجًا",
+    "search_placeholder": "أدخل الموقع...",
+    "search_button": "بحث",
+    "popular_locations": "المواقع الشهيرة"
+  },
+  "about_hero": {
+    "title": "نبني مستقبلك،<br />منزل واحد في كل مرة",
+    "subtitle": "نحن أكثر من مجرد منصة عقارية - نحن شريكك في العثور على المكان المثالي الذي تسميه وطنًا."
+  },
+  "about_mission": {
+    "purpose_title": "هدفنا",
+    "mission_title": "مهمتنا",
+    "mission_description": "توفير تجربة تأجير عقارات شفافة وفعالة لجميع المستخدمين. نسعى جاهدين لجعل عملية العثور على منزلك المثالي سلسة قدر الإمكان، مع الحفاظ على أعلى معايير الخدمة والنزاهة.",
+    "vision_title": "رؤيتنا",
+    "vision_description": "تمكين ملايين المستخدمين من العثور على منزلهم المثالي بسهولة وثقة. نتصور مستقبلًا لا يقتصر فيه البحث عن العقارات على مجرد العثور على مكان للعيش، بل يتعلق باكتشاف مجتمع للانتماء إليه."
+  },
+  "about_values": {
+    "title": "قيمنا",
+    "subtitle": "هذه القيم الأساسية توجه كل ما نقوم به في OurHome",
+    "trust_title": "الثقة",
+    "trust_description": "نتحقق من جميع مالكي العقارات والمستأجرين لضمان تجربة آمنة وموثوقة للجميع.",
+    "transparency_title": "الشفافية",
+    "transparency_description": "قوائم عقارية واضحة وصادقة بمعلومات دقيقة وبدون رسوم خفية.",
+    "efficiency_title": "الكفاءة",
+    "efficiency_description": "عملية بحث وإدراج عقارات مبسطة لتوفير وقتك وجهدك."
+  },
+  "about_team": {
+    "title": "تعرف على فريقنا",
+    "subtitle": "الأفراد المتحمسون وراء نجاح OurHome"
+  },
+  "about_benefits": {
+    "title": "لماذا تختار OurHome؟",
+    "subtitle": "اكتشف الفرق مع حلولنا العقارية الشاملة",
+    "verified_properties_title": "عقارات موثقة",
+    "verified_properties_description": "يتم التحقق من كل عقار بدقة للجودة والأمان.",
+    "user_friendly_platform_title": "منصة سهلة الاستخدام",
+    "user_friendly_platform_description": "تنقل بديهي وإدارة سلسة للعقارات.",
+    "support_title": "دعم 24/7",
+    "support_description": "مساعدة على مدار الساعة لجميع استفساراتك.",
+    "comprehensive_listings_title": "قوائم شاملة",
+    "comprehensive_listings_description": "مجموعة واسعة من العقارات لتلبية كل الاحتياجات والميزانيات."
+  },
+  "about_milestone": {
+    "title": "رحلتنا حتى الآن",
+    "subtitle": "المحطات التي تميز نمونا ونجاحنا",
+    "properties_listed_title": "العقارات المدرجة",
+    "properties_listed_description": "وتنمو يوميا",
+    "happy_clients_title": "عملاء سعداء",
+    "happy_clients_description": "عملاء راضون"
+  },
+  "contact_hero": {
+    "title": "تواصل معنا",
+    "subtitle": "هل لديك أسئلة حول عقاراتنا؟ هل تحتاج إلى مساعدة في العثور على منزلك المثالي؟ فريقنا هنا لمساعدتك في كل خطوة على الطريق."
+  }
+}
