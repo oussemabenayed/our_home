@@ -23,6 +23,7 @@ export default defineConfig({
           ui: ['lucide-react'],
           i18n: ['react-i18next', 'i18next'],
           http: ['axios'],
+          charts: ['chart.js', 'react-chartjs-2'],
           toast: ['react-toastify'],
           helmet: ['react-helmet-async']
         },
@@ -52,7 +53,9 @@ export default defineConfig({
       'i18next',
       'react-toastify',
       '@react-spring/web',
-      'react-text-gradients'
+      'react-text-gradients',
+      'chart.js',
+      'react-chartjs-2'
     ],
     force: true
   },
