@@ -47,6 +47,7 @@ app.use(cors({
     
     // Allow localhost and local network IPs
     if (origin.match(/^http:\/\/(localhost|127\.0\.0\.1|192\.168\.|10\.|172\.)/) ||
+        origin.includes('vercel.app') ||
         origin.includes('buildestate.vercel.app') ||
         origin.includes('real-estate-website')) {
       return callback(null, true);
