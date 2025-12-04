@@ -17,15 +17,31 @@ const addproperty = async (req, res) => {
 
         const imageUrls = await Promise.all(
             images.map(async (item) => {
-                const result = await imagekit.upload({
-                    file: fs.readFileSync(item.path),
-                    fileName: item.originalname,
-                    folder: "Property",
-                });
-                fs.unlink(item.path, (err) => {
-                    if (err) console.log("Error deleting the file: ", err);
-                });
-                return result.url;
+                try {
+                    if (imagekit) {
+                        const result = await imagekit.upload({
+                            file: fs.readFileSync(item.path),
+                            fileName: item.originalname,
+                            folder: "Property",
+                        });
+                        fs.unlink(item.path, (err) => {
+                            if (err) console.log("Error deleting file:", err);
+                        });
+                        return result.url;
+                    } else {
+                        // Fallback: save to local uploads folder
+                        const localPath = `/uploads/${Date.now()}-${item.originalname}`;
+                        const destPath = `./uploads/${Date.now()}-${item.originalname}`;
+                        fs.renameSync(item.path, destPath);
+                        return `${process.env.BACKEND_URL || 'http://localhost:4000'}${localPath}`;
+                    }
+                } catch (error) {
+                    console.error("Image upload failed, using local storage:", error);
+                    const localPath = `/uploads/${Date.now()}-${item.originalname}`;
+                    const destPath = `./uploads/${Date.now()}-${item.originalname}`;
+                    fs.renameSync(item.path, destPath);
+                    return `${process.env.BACKEND_URL || 'http://localhost:4000'}${localPath}`;
+                }
             })
         );
 
@@ -122,15 +138,30 @@ const updateproperty = async (req, res) => {
 
             newImageUrls = await Promise.all(
                 imagesToUpload.map(async (item) => {
-                    const result = await imagekit.upload({
-                        file: fs.readFileSync(item.path),
-                        fileName: item.originalname,
-                        folder: "Property",
-                    });
-                    fs.unlink(item.path, (err) => {
-                        if (err) console.log("Error deleting the file: ", err);
-                    });
-                    return result.url;
+                    try {
+                        if (imagekit) {
+                            const result = await imagekit.upload({
+                                file: fs.readFileSync(item.path),
+                                fileName: item.originalname,
+                                folder: "Property",
+                            });
+                            fs.unlink(item.path, (err) => {
+                                if (err) console.log("Error deleting file:", err);
+                            });
+                            return result.url;
+                        } else {
+                            const localPath = `/uploads/${Date.now()}-${item.originalname}`;
+                            const destPath = `./uploads/${Date.now()}-${item.originalname}`;
+                            fs.renameSync(item.path, destPath);
+                            return `${process.env.BACKEND_URL || 'http://localhost:4000'}${localPath}`;
+                        }
+                    } catch (error) {
+                        console.error("Image upload failed, using local storage:", error);
+                        const localPath = `/uploads/${Date.now()}-${item.originalname}`;
+                        const destPath = `./uploads/${Date.now()}-${item.originalname}`;
+                        fs.renameSync(item.path, destPath);
+                        return `${process.env.BACKEND_URL || 'http://localhost:4000'}${localPath}`;
+                    }
                 })
             );
         }
