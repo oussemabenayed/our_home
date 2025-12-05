@@ -6,14 +6,10 @@ import Properties from '../components/propertiesshow'
 import Steps from '../components/Steps'
 import Testimonials from '../components/testimonial'
 import Milestones from '../components/aboutus/Milestone'
-import { restoreScrollPosition } from '../utils/scrollRestoration'
 
 const Home = () => {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      restoreScrollPosition('homeScrollPos');
-    }, 100);
-    return () => clearTimeout(timer);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
