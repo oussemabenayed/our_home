@@ -297,7 +297,6 @@ const PropertyDetails = () => {
         <nav className="flex items-center justify-between mb-8">
           <Link
             to="/properties"
-            onClick={() => saveScrollPosition('propertiesScrollPos')}
             className="inline-flex items-center text-blue-600 hover:text-blue-700"
           >
             <ArrowLeft className="w-4 h-4 mr-2" /> {t('property_detail.back_to_properties')}

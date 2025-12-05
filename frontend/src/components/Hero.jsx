@@ -4,7 +4,6 @@ import { Search, MapPin, ArrowRight } from "../components/LightIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { saveScrollPosition } from '../utils/scrollRestoration';
 // Lazy load hero image
 const heroimage = new URL('../assets/images/heroimage.png', import.meta.url).href;
 // Remove heavy gradient library
@@ -71,7 +70,6 @@ const Hero = () => {
 
   const handleSearch = (query) => {
     if (!query.trim()) return;
-    saveScrollPosition('homeScrollPos');
     navigate(`/properties?location=${encodeURIComponent(query)}`);
   };
 

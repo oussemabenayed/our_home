@@ -3,7 +3,6 @@ import { Search, X, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import useClickOutside from '../../hooks/useClickOutside';
-import { saveScrollPosition } from '../../utils/scrollRestoration';
 
 const SearchBar = ({ onSearch, className }) => {
   const { t } = useTranslation();
@@ -42,7 +41,6 @@ const SearchBar = ({ onSearch, className }) => {
     setRecentSearches(updatedSearches);
     localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
     
-    saveScrollPosition('propertiesScrollPos');
     onSearch(query);
     setShowSuggestions(false);
   };
