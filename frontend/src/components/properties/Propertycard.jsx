@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { 
@@ -20,6 +20,8 @@ const PropertyCard = ({ property, viewType }) => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showControls, setShowControls] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const handleNavigateToDetails = () => {
     navigate(`/properties/single/${property._id}`);
@@ -53,6 +55,30 @@ const PropertyCard = ({ property, viewType }) => {
     }
   };
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (property.image.length <= 1) return;
+    
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      e.stopPropagation();
+      if (swipeDistance > 0) {
+        handleImageNavigation(e, 'next');
+      } else {
+        handleImageNavigation(e, 'prev');
+      }
+    }
+  };
+
   return (
     <motion.div
       layout
@@ -68,7 +94,12 @@ const PropertyCard = ({ property, viewType }) => {
       onMouseLeave={() => setShowControls(false)}
     >
       {/* Image Carousel Section */}
-      <div className={`relative ${isGrid ? 'h-64' : 'w-96'}`}>
+      <div 
+        className={`relative ${isGrid ? 'h-64' : 'w-96'}`}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <AnimatePresence mode="wait">
           <motion.img
             key={currentImageIndex}
@@ -82,9 +113,9 @@ const PropertyCard = ({ property, viewType }) => {
           />
         </AnimatePresence>
 
-        {/* Image Navigation Controls */}
+        {/* Image Navigation Controls - Desktop Only */}
         {showControls && property.image.length > 1 && (
-          <div className="absolute inset-0 flex items-center justify-between px-2">
+          <div className="hidden md:flex absolute inset-0 items-center justify-between px-2">
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
