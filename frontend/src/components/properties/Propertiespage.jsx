@@ -80,6 +80,13 @@ const PropertiesPage = () => {
     if (locationQuery) {
       setFilters(prev => ({ ...prev, searchQuery: locationQuery }));
     }
+
+    // Restore pagination state
+    const savedPage = sessionStorage.getItem('propertiesPage');
+    if (savedPage) {
+      setPagination(prev => ({ ...prev, currentPage: parseInt(savedPage) }));
+      sessionStorage.removeItem('propertiesPage');
+    }
   }, []);
 
   const filteredProperties = useMemo(() => {
@@ -144,6 +151,7 @@ const PropertiesPage = () => {
 
   const handlePageChange = (page) => {
     setPagination(prev => ({ ...prev, currentPage: page }));
+    sessionStorage.setItem('propertiesPage', page.toString());
   };
 
   if (propertyState.loading) {
