@@ -191,10 +191,10 @@ const PropertyListings = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Property Dashboard
+            {t('dashboard.property_dashboard') || 'Property Dashboard'}
           </h1>
           <p className="text-gray-600">
-            Manage your properties and track performance
+            {t('dashboard.manage_track') || 'Manage your properties and track performance'}
           </p>
         </div>
 
@@ -202,31 +202,31 @@ const PropertyListings = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <StatCard
             icon={Home}
-            title="Total Properties"
+            title={t('dashboard.total_properties')}
             value={properties.length}
             color="#3B82F6"
-            subtitle="Properties listed"
+            subtitle={t('dashboard.properties_listed') || 'Properties listed'}
           />
           <StatCard
             icon={Eye}
-            title="Total Views"
+            title={t('dashboard.total_views')}
             value={stats.totalViews.toLocaleString()}
             color="#10B981"
-            subtitle="Across all properties"
+            subtitle={t('dashboard.across_all') || 'Across all properties'}
           />
           <StatCard
             icon={Heart}
-            title="Total Likes"
+            title={t('dashboard.total_likes') || 'Total Likes'}
             value={stats.totalLikes}
             color="#EF4444"
-            subtitle="Property likes received"
+            subtitle={t('dashboard.likes_received') || 'Property likes received'}
           />
           <StatCard
             icon={Clock}
-            title="Pending Appointments"
+            title={t('dashboard.pending_appointments')}
             value={stats.pendingAppointments}
             color="#F59E0B"
-            subtitle="Awaiting confirmation"
+            subtitle={t('dashboard.awaiting_confirmation') || 'Awaiting confirmation'}
           />
         </div>
 
@@ -240,14 +240,14 @@ const PropertyListings = () => {
             >
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                  🏆 Best Performing Property
+                  🏆 {t('dashboard.best_performing') || 'Best Performing Property'}
                 </h2>
                 <Link 
                   to="/user/add-property"
                   className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <Plus className="w-4 h-4 mr-2" />
-                  Add Property
+                  {t('user_admin.add_property')}
                 </Link>
               </div>
               <div className="flex items-center gap-4">
@@ -262,17 +262,17 @@ const PropertyListings = () => {
                   <div className="flex items-center gap-4 mt-2">
                     <div className="flex items-center gap-1">
                       <Eye className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm font-medium">{stats.topProperty.views} views</span>
+                      <span className="text-sm font-medium">{stats.topProperty.views} {t('dashboard.views')}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Heart className="w-4 h-4 text-red-600" />
-                      <span className="text-sm font-medium">{stats.topProperty.likes || 0} likes</span>
+                      <span className="text-sm font-medium">{stats.topProperty.likes || 0} {t('dashboard.likes')}</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-xl font-bold text-blue-600">{stats.topProperty.price.toLocaleString()} TND</p>
-                  <p className="text-sm text-gray-600">For {stats.topProperty.availability}</p>
+                  <p className="text-sm text-gray-600">{t('admin.for')} {stats.topProperty.availability}</p>
                 </div>
               </div>
             </motion.div>
@@ -283,10 +283,10 @@ const PropertyListings = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
           <div>
             <h2 className="text-xl font-semibold text-gray-900">
-              My Properties ({filteredProperties.length})
+              {t('dashboard.my_properties') || 'My Properties'} ({filteredProperties.length})
             </h2>
             <p className="text-sm text-gray-600">
-              Manage and edit your property listings
+              {t('dashboard.manage_edit') || 'Manage and edit your property listings'}
             </p>
           </div>
           <Link 
@@ -294,7 +294,7 @@ const PropertyListings = () => {
             className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
           >
             <Calendar className="w-4 h-4 mr-2" />
-            View Appointments
+            {t('dashboard.view_appointments') || 'View Appointments'}
           </Link>
         </div>
 
@@ -406,7 +406,7 @@ const PropertyListings = () => {
                         ? 'bg-green-100 text-green-800'
                         : 'bg-blue-100 text-blue-800'
                     }`}>
-                      For {property.availability}
+                      {t('admin.for')} {property.availability}
                     </span>
                   </div>
 
@@ -461,10 +461,10 @@ const PropertyListings = () => {
           >
             <Home className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              {properties.length === 0 ? 'No properties yet' : 'No properties found'}
+              {properties.length === 0 ? t('dashboard.no_properties_yet') || 'No properties yet' : t('admin.no_properties_found')}
             </h3>
             <p className="text-gray-600 mb-4">
-              {properties.length === 0 ? 'Start by adding your first property' : 'Try adjusting your search or filters'}
+              {properties.length === 0 ? t('dashboard.start_adding') || 'Start by adding your first property' : t('admin.adjust_search')}
             </p>
             {properties.length === 0 && (
               <Link 
@@ -472,7 +472,7 @@ const PropertyListings = () => {
                 className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <Plus className="w-5 h-5 mr-2" />
-                Add Your First Property
+                {t('dashboard.add_first_property') || 'Add Your First Property'}
               </Link>
             )}
           </motion.div>

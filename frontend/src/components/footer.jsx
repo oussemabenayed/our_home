@@ -221,15 +221,9 @@ const Footer = () => {
     { name: t('navbar.home'), href: '/' },
     { name: t('navbar.properties'), href: '/properties' },
     { name: t('navbar.contact'), href: '/contact' },
-    { name: t('navbar.ai_hub'), href: '/ai-agent' },
   ];
 
-  const helpLinks = [
-    { name: t('footer.customer_support'), href: '/' },
-    { name: t('footer.faqs'), href: '/' },
-    { name: t('footer.terms_conditions'), href: '/' },
-    { name: t('footer.privacy_policy'), href: '/' },
-  ];
+
   
   return (
     <footer>
@@ -259,7 +253,7 @@ const Footer = () => {
           {/* Desktop layout */}
           <div className="hidden lg:grid grid-cols-12 gap-8">
             {/* Quick Links Column */}
-            <FooterColumn title={t('footer.quick_links')} className="col-span-2" delay={0.2}>
+            <FooterColumn title={t('footer.quick_links')} className="col-span-3" delay={0.2}>
               <ul className="space-y-3">
                 {companyLinks.map(link => (
                   <li key={link.name} className="group">
@@ -269,19 +263,8 @@ const Footer = () => {
               </ul>
             </FooterColumn>
 
-            {/* Help Column */}
-            <FooterColumn title={t('footer.support')} className="col-span-2" delay={0.3}>
-              <ul className="space-y-3">
-                {helpLinks.map(link => (
-                  <li key={link.name} className="group">
-                    <FooterLink href={link.href}>{link.name}</FooterLink>
-                  </li>
-                ))}
-              </ul>
-            </FooterColumn>
-
             {/* Contact Info */}
-            <FooterColumn title={t('footer.contact_us')} className="col-span-3" delay={0.4}>
+            <FooterColumn title={t('footer.contact_us')} className="col-span-3" delay={0.3}>
               <ul className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <li key={index}>
@@ -300,7 +283,7 @@ const Footer = () => {
             </FooterColumn>
             
             {/* Newsletter */}
-            <div className="col-span-5">
+            <div className="col-span-6">
               <Newsletter />
             </div>
           </div>
@@ -310,16 +293,6 @@ const Footer = () => {
             <MobileFooterSection title={t('footer.quick_links')}>
               <ul className="space-y-2 py-2">
                 {companyLinks.map(link => (
-                  <li key={link.name} className="group">
-                    <FooterLink href={link.href}>{link.name}</FooterLink>
-                  </li>
-                ))}
-              </ul>
-            </MobileFooterSection>
-
-            <MobileFooterSection title={t('footer.support')}>
-              <ul className="space-y-2 py-2">
-                {helpLinks.map(link => (
                   <li key={link.name} className="group">
                     <FooterLink href={link.href}>{link.name}</FooterLink>
                   </li>
