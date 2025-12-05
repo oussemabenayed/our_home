@@ -4,6 +4,7 @@ import { Search, MapPin, ArrowRight } from "../components/LightIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { saveScrollPosition } from '../utils/scrollRestoration';
 // Lazy load hero image
 const heroimage = new URL('../assets/images/heroimage.png', import.meta.url).href;
 // Remove heavy gradient library
@@ -68,8 +69,15 @@ const Hero = () => {
 
   useClickOutside(searchContainerRef, () => setShowSuggestions(false));
 
-  const handleSubmit = (location = searchQuery) => {
-    navigate(`/properties?location=${encodeURIComponent(location)}`);
+  const handleSearch = (query) => {
+    if (!query.trim()) return;
+    saveScrollPosition('homeScrollPos');
+    navigate(`/properties?location=${encodeURIComponent(query)}`);
+  };
+
+  const handleSubmit = (e) => {
+    if (e) e.preventDefault();
+    handleSearch(searchQuery);
   };
 
   return (
@@ -134,7 +142,8 @@ const Hero = () => {
                   />
                 </div>
                 <button
-                  onClick={() => handleSubmit()}
+                  type="submit"
+                  onClick={handleSubmit}
                   className="md:w-auto w-full bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 
                     transition-colors flex items-center justify-center gap-2 font-medium shadow-md"
                 >
@@ -161,7 +170,7 @@ const Hero = () => {
                           key={location}
                           onClick={() => {
                             setSearchQuery(location);
-                            handleSubmit(location);
+                            handleSearch(location);
                           }}
                           className="w-full text-left px-3 py-2 hover:bg-gray-50 rounded-lg flex items-center 
                             justify-between text-gray-700 transition-colors"
