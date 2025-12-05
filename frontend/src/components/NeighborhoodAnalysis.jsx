@@ -16,42 +16,42 @@ const NeighborhoodAnalysis = ({ propertyId }) => {
       key: 'education', 
       icon: School, 
       color: 'text-blue-600', 
-      name: 'Education',
+      name: t('neighborhood.education'),
       tags: ['school', 'kindergarten', 'university', 'college']
     },
     { 
       key: 'healthcare', 
       icon: Hospital, 
       color: 'text-red-600', 
-      name: 'Healthcare',
+      name: t('neighborhood.healthcare'),
       tags: ['hospital', 'clinic', 'doctors', 'pharmacy', 'dentist']
     },
     { 
       key: 'shopping', 
       icon: ShoppingCart, 
       color: 'text-green-600', 
-      name: 'Shopping',
+      name: t('neighborhood.shopping'),
       tags: ['supermarket', 'marketplace', 'bazaar', 'convenience', 'shopping_centre', 'general']
     },
     { 
       key: 'dining', 
       icon: Coffee, 
       color: 'text-orange-600', 
-      name: 'Dining',
+      name: t('neighborhood.dining'),
       tags: ['restaurant', 'cafe', 'fast_food', 'bar']
     },
     { 
       key: 'fitness', 
       icon: Dumbbell, 
       color: 'text-indigo-600', 
-      name: 'Fitness',
+      name: t('neighborhood.fitness'),
       tags: ['gym', 'fitness_centre', 'sports_centre', 'swimming_pool']
     },
     { 
       key: 'others', 
       icon: MapPin, 
       color: 'text-gray-600', 
-      name: 'Others',
+      name: t('neighborhood.others'),
       tags: []
     }
   ];
@@ -106,7 +106,7 @@ const NeighborhoodAnalysis = ({ propertyId }) => {
       <div className="bg-white rounded-xl shadow-lg p-6">
         <div className="flex items-center justify-center py-8">
           <Loader className="w-6 h-6 animate-spin text-blue-600 mr-2" />
-          <span className="text-gray-600">Loading neighborhood analysis...</span>
+          <span className="text-gray-600">{t('neighborhood.loading')}</span>
         </div>
       </div>
     );
@@ -121,7 +121,7 @@ const NeighborhoodAnalysis = ({ propertyId }) => {
             onClick={fetchNeighborhoodData}
             className="text-blue-600 hover:text-blue-700 text-sm"
           >
-            Try again
+            {t('neighborhood.try_again')}
           </button>
         </div>
       </div>
@@ -135,8 +135,8 @@ const NeighborhoodAnalysis = ({ propertyId }) => {
       className="bg-white rounded-xl shadow-lg overflow-hidden"
     >
       <div className="p-6 border-b border-gray-200">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">Neighborhood Analysis</h3>
-        <p className="text-gray-600 text-sm">Nearby amenities and services within walking distance</p>
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('neighborhood.title')}</h3>
+        <p className="text-gray-600 text-sm">{t('neighborhood.subtitle')}</p>
       </div>
 
       <div className="p-6">
@@ -183,7 +183,7 @@ const NeighborhoodAnalysis = ({ propertyId }) => {
         ) : (
           <div className="text-center py-8 text-gray-500">
             <MapPin className="w-12 h-12 mx-auto mb-2 text-gray-300" />
-            <p>No neighborhood amenities found for this property</p>
+            <p>{t('neighborhood.no_amenities')}</p>
           </div>
         )}
 

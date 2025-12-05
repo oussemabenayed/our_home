@@ -674,10 +674,10 @@
   },
   "neighborhood": {
     "title": "Neighborhood Analysis",
-    "subtitle": "Discover nearby amenities and services for any address",
+    "subtitle": "Nearby amenities and services within walking distance",
     "search_placeholder": "Enter an address (e.g., 123 Main Street, New York)",
     "analyze": "Analyze",
-    "no_amenities": "No amenities found nearby",
+    "no_amenities": "No neighborhood amenities found for this property",
     "how_it_works": "How It Works",
     "step1_title": "Search",
     "step1_desc": "Enter any address",
@@ -686,7 +686,14 @@
     "step3_title": "Calculate",
     "step3_desc": "Get travel times",
     "religious": "Religious",
-    "others": "Others"
+    "others": "Others",
+    "education": "Education",
+    "healthcare": "Healthcare",
+    "shopping": "Shopping",
+    "dining": "Dining",
+    "fitness": "Fitness",
+    "loading": "Loading neighborhood analysis...",
+    "try_again": "Try again"
   },
   "profile": {
     "title": "User Profile",

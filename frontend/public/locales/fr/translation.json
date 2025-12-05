@@ -696,10 +696,10 @@
   },
   "neighborhood": {
     "title": "Analyse de quartier",
-    "subtitle": "Découvrez les commodités et services à proximité de n'importe quelle adresse",
+    "subtitle": "Commodités et services à proximité à distance de marche",
     "search_placeholder": "Entrez une adresse (ex: 123 Rue de la Paix, Paris)",
     "analyze": "Analyser",
-    "no_amenities": "Aucune commodité trouvée à proximité",
+    "no_amenities": "Aucune commodité de quartier trouvée pour cette propriété",
     "how_it_works": "Comment ça marche",
     "step1_title": "Rechercher",
     "step1_desc": "Entrez n'importe quelle adresse",
@@ -708,7 +708,14 @@
     "step3_title": "Calculer",
     "step3_desc": "Obtenez les temps de trajet",
     "religious": "Religieux",
-    "others": "Autres"
+    "others": "Autres",
+    "education": "Éducation",
+    "healthcare": "Santé",
+    "shopping": "Shopping",
+    "dining": "Restauration",
+    "fitness": "Fitness",
+    "loading": "Chargement de l'analyse de quartier...",
+    "try_again": "Réessayer"
   },
   "profile": {
     "title": "Profil utilisateur",
