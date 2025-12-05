@@ -80,7 +80,7 @@ const Hero = () => {
 
   return (
     <AnimatedContainer distance={50} direction="vertical">
-      <div className="pt-20">
+      <div className="mt-16">
         <div className="relative h-[75vh] flex items-center justify-center">
           {/* Background Image */}
           <motion.div
