@@ -88,14 +88,6 @@ const Companies = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.div 
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6"
-          >
-            <Star className="w-4 h-4" />
-            {t('companies.advanced_features')}
-          </motion.div>
-          
           <motion.h2 
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
@@ -105,8 +97,6 @@ const Companies = () => {
               {t('companies.dream_home')}
             </span>
           </motion.h2>
-          
-
         </motion.div>
 
 
