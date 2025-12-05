@@ -81,13 +81,13 @@ const Hero = () => {
   return (
     <AnimatedContainer distance={50} direction="vertical">
       <div className="mt-20">
-        <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 my-3 mx-6">
+        <div className="relative h-[85vh] flex items-center justify-center">
           {/* Background Image */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="absolute inset-0 z-0 rounded-2xl overflow-hidden"
+            className="absolute inset-0 z-0"
           >
             <img
               src={heroimage}
@@ -97,24 +97,24 @@ const Hero = () => {
               className="w-full h-full object-cover"
               style={{ imageRendering: 'auto' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-sky-300/40 via-slate/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent" />
           </motion.div>
 
           {/* Content */}
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
+          <div className="relative z-10 max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
               className="mb-12"
             >
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
                 {t('hero.title_part1')}
                 <br />
-                <span className="text-gray-800">{t('hero.title_part2')}</span>
+                <span className="text-blue-400">{t('hero.title_part2')}</span>
               </h1>
 
-              <p className="text-slate-700 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+              <p className="text-white text-lg sm:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
                 {t('hero.subtitle')}
               </p>
             </motion.div>
@@ -186,6 +186,32 @@ const Hero = () => {
               </AnimatePresence>
             </motion.div>
           </div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="flex flex-col items-center gap-2 cursor-pointer"
+              onClick={() => window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
+            >
+              <span className="text-white text-sm font-medium drop-shadow-md">
+                {t('hero.scroll_down') || 'Scroll Down'}
+              </span>
+              <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
+                <motion.div
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="w-1.5 h-1.5 bg-white rounded-full"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </AnimatedContainer>
