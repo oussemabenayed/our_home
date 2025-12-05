@@ -71,7 +71,7 @@ const Companies = () => {
   // ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-12 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50"></div>
       <div className="absolute inset-0 overflow-hidden">
