@@ -10,7 +10,10 @@ import { restoreScrollPosition } from '../utils/scrollRestoration'
 
 const Home = () => {
   useEffect(() => {
-    restoreScrollPosition('homeScrollPos');
+    const timer = setTimeout(() => {
+      restoreScrollPosition('homeScrollPos');
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

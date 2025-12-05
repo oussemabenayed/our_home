@@ -4,7 +4,10 @@ import { restoreScrollPosition } from '../utils/scrollRestoration'
 
 const Properties = () => {
   useEffect(() => {
-    restoreScrollPosition('propertiesScrollPos');
+    const timer = setTimeout(() => {
+      restoreScrollPosition('propertiesScrollPos');
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

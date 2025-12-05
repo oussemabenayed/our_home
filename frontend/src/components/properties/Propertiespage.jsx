@@ -73,6 +73,13 @@ const PropertiesPage = () => {
 
   useEffect(() => {
     fetchProperties();
+    
+    // Check for search query from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const locationQuery = urlParams.get('location');
+    if (locationQuery) {
+      setFilters(prev => ({ ...prev, searchQuery: locationQuery }));
+    }
   }, []);
 
   const filteredProperties = useMemo(() => {
@@ -137,7 +144,7 @@ const PropertiesPage = () => {
 
   const handlePageChange = (page) => {
     setPagination(prev => ({ ...prev, currentPage: page }));
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (propertyState.loading) {
