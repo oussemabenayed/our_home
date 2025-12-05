@@ -164,7 +164,7 @@ const PropertyCard = ({ property }) => {
           </div>
           <div className="flex items-center gap-1">
             <Maximize className="w-4 h-4 text-blue-500" />
-            <span className="text-sm text-gray-600">{property.sqft} sqft</span>
+            <span className="text-sm text-gray-600">{property.sqft} m²</span>
           </div>
         </div>
         

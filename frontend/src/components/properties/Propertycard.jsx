@@ -202,7 +202,7 @@ const PropertyCard = ({ property, viewType }) => {
           <div className="flex flex-col items-center gap-1 bg-blue-50 p-2 rounded-lg">
             <Maximize className="w-5 h-5 text-blue-600" />
             <span className="text-sm font-medium text-gray-600">
-              {property.sqft} sqft
+              {property.sqft} m²
             </span>
           </div>
         </div>

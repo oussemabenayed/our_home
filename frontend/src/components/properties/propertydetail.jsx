@@ -450,7 +450,7 @@ const PropertyDetails = () => {
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg text-center">
                     <Maximize className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                    <p className="text-sm text-gray-600">{property.sqft} sqft</p>
+                    <p className="text-sm text-gray-600">{property.sqft} m²</p>
                   </div>
                 </div>
 

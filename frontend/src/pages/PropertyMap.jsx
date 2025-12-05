@@ -398,7 +398,7 @@ const PropertyMap = () => {
                   <div className="flex justify-between text-sm text-gray-600 mb-4">
                     <span>{selectedProperty.beds} beds</span>
                     <span>{selectedProperty.baths} baths</span>
-                    <span>{selectedProperty.sqft} sqft</span>
+                    <span>{selectedProperty.sqft} m²</span>
                   </div>
                   <a 
                     href={`/properties/single/${selectedProperty._id}`}

@@ -73,7 +73,7 @@
     "max_price": "Max Price",
     "bedrooms": "Bedrooms",
     "bathrooms": "Bathrooms",
-    "sqft": "Square Feet",
+    "sqft": "Surface (m²)",
     "amenities": "Amenities",
     "apply_filters": "Apply Filters",
     "clear_filters": "Clear Filters",
@@ -713,7 +713,7 @@
     "location_required": "Location is required",
     "beds_required": "Number of bedrooms is required",
     "baths_required": "Number of bathrooms is required",
-    "sqft_required": "Square feet is required",
+    "sqft_required": "Surface is required",
     "price_required": "Price is required",
     "phone_required": "Phone number is required",
     "images_required": "At least one image is required"

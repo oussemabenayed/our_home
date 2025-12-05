@@ -75,7 +75,7 @@
     "max_price": "Prix maximum",
     "bedrooms": "Chambres",
     "bathrooms": "Salles de bain",
-    "sqft": "Pieds carrés",
+    "sqft": "Surface (m²)",
     "amenities": "Commodités",
     "apply_filters": "Appliquer les filtres",
     "clear_filters": "Effacer les filtres",
@@ -735,7 +735,7 @@
     "location_required": "L'emplacement est requis",
     "beds_required": "Le nombre de chambres est requis",
     "baths_required": "Le nombre de salles de bain est requis",
-    "sqft_required": "La superficie est requise",
+    "sqft_required": "La surface est requise",
     "price_required": "Le prix est requis",
     "phone_required": "Le numéro de téléphone est requis",
     "images_required": "Au moins une image est requise"

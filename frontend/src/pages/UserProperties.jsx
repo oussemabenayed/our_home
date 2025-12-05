@@ -421,7 +421,7 @@ const PropertyListings = () => {
                     </div>
                     <div className="flex flex-col items-center p-2 bg-gray-50 rounded-lg">
                       <Maximize className="w-5 h-5 text-gray-400 mb-1" />
-                      <span className="text-sm text-gray-600">{property.sqft} sqft</span>
+                      <span className="text-sm text-gray-600">{property.sqft} m²</span>
                     </div>
                   </div>
 
