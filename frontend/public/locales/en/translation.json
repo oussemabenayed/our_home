@@ -66,6 +66,7 @@
   },
   "properties": {
     "title": "Properties",
+    "search_placeholder": "Search properties...",
     "filter_by_price": "Filter by Price",
     "filter_by_type": "Property Type",
     "filter_by_location": "Location",
