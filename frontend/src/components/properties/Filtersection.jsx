@@ -19,11 +19,21 @@ const getAvailabilityTypes = (t) => [
 ];
 
 const getAmenitiesList = (t) => [
-  { key: "swimming_pool", label: t('filters.swimming_pool') },
-  { key: "gym", label: t('filters.gym') },
-  { key: "parking", label: t('filters.parking') },
-  { key: "garden", label: t('filters.garden') },
-  { key: "security", label: t('filters.security') }
+  { key: "lake_view", label: t('amenities.lake_view') },
+  { key: "fireplace", label: t('amenities.fireplace') },
+  { key: "central_heating", label: t('amenities.central_heating') },
+  { key: "dock", label: t('amenities.dock') },
+  { key: "pool", label: t('amenities.pool') },
+  { key: "garage", label: t('amenities.garage') },
+  { key: "garden", label: t('amenities.garden') },
+  { key: "gym", label: t('amenities.gym') },
+  { key: "security_system", label: t('amenities.security_system') },
+  { key: "master_bathroom", label: t('amenities.master_bathroom') },
+  { key: "guest_bathroom", label: t('amenities.guest_bathroom') },
+  { key: "home_theater", label: t('amenities.home_theater') },
+  { key: "exercise_room", label: t('amenities.exercise_room') },
+  { key: "covered_parking", label: t('amenities.covered_parking') },
+  { key: "internet_ready", label: t('amenities.internet_ready') }
 ];
 
 const FilterSection = ({ filters, setFilters, onApplyFilters, maxPrice: maxPriceProp }) => {
