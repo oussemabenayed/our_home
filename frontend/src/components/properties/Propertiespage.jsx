@@ -144,7 +144,6 @@ const PropertiesPage = () => {
 
   const handlePageChange = (page) => {
     setPagination(prev => ({ ...prev, currentPage: page }));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (propertyState.loading) {

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
+import { saveScrollPosition } from '../../utils/scrollRestoration';
 import { useTranslation } from 'react-i18next';
 import { 
   BedDouble, 
@@ -296,6 +297,7 @@ const PropertyDetails = () => {
         <nav className="flex items-center justify-between mb-8">
           <Link
             to="/properties"
+            onClick={() => saveScrollPosition('propertiesScrollPos')}
             className="inline-flex items-center text-blue-600 hover:text-blue-700"
           >
             <ArrowLeft className="w-4 h-4 mr-2" /> {t('property_detail.back_to_properties')}
