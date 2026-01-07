@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import SearchBar from "./Searchbar.jsx";
 import FilterSection from "./Filtersection.jsx";
 import PropertyCard from "./Propertycard.jsx";
+import CompactPagination from "./CompactPagination.jsx";
 import { Backendurl } from "../../App.jsx";
 
 const PropertiesPage = () => {
@@ -385,46 +386,13 @@ const PropertiesPage = () => {
               </AnimatePresence>
             </motion.div>
 
-            {/* Pagination */}
+            {/* Compact Pagination */}
             {filteredProperties.length > 0 && totalPages > 1 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="flex justify-center items-center mt-8 space-x-2"
-              >
-                <button
-                  onClick={() => handlePageChange(pagination.currentPage - 1)}
-                  disabled={pagination.currentPage === 1}
-                  className="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {t('common.previous')}
-                </button>
-                
-                {[...Array(totalPages)].map((_, index) => {
-                  const page = index + 1;
-                  return (
-                    <button
-                      key={page}
-                      onClick={() => handlePageChange(page)}
-                      className={`px-3 py-2 rounded-lg ${
-                        pagination.currentPage === page
-                          ? 'bg-blue-600 text-white'
-                          : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      {page}
-                    </button>
-                  );
-                })}
-                
-                <button
-                  onClick={() => handlePageChange(pagination.currentPage + 1)}
-                  disabled={pagination.currentPage === totalPages}
-                  className="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {t('common.next')}
-                </button>
-              </motion.div>
+              <CompactPagination
+                currentPage={pagination.currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
             )}
 
             {/* Results info */}

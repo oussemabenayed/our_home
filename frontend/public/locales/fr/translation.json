@@ -97,7 +97,9 @@
     "newest_first": "Plus récent d'abord",
     "toggle_filters": "Basculer les filtres",
     "adjust_filters": "Essayez d'ajuster vos filtres ou critères de recherche",
-    "recent_searches": "Recherches récentes"
+    "recent_searches": "Recherches récentes",
+    "current_page": "Page actuelle",
+    "pages": "pages"
   },
   "filters": {
     "house": "Maison",
