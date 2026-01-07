@@ -332,6 +332,13 @@ const PropertyDetails = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 className="max-w-full max-h-full object-contain"
+                style={{ 
+                  width: 'auto', 
+                  height: 'auto', 
+                  maxWidth: '100%', 
+                  maxHeight: '100%',
+                  objectFit: 'contain'
+                }}
               />
             </AnimatePresence>
 
