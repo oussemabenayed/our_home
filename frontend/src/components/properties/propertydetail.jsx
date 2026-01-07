@@ -321,7 +321,7 @@ const PropertyDetails = () => {
 
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Image Gallery */}
-          <div className="relative h-[500px] bg-gray-100 rounded-xl overflow-hidden mb-8">
+          <div className="relative h-[500px] bg-gray-100 rounded-xl overflow-hidden mb-8 flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeImage}
@@ -331,7 +331,7 @@ const PropertyDetails = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-full"
+                className="max-w-full max-h-full object-contain"
               />
             </AnimatePresence>
 
